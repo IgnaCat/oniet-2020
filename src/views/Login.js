@@ -1,9 +1,7 @@
 import React, { useContext, useState } from 'react';
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -56,10 +54,13 @@ export default function Login() {
       );
       const token = await response.json();
       setUser({ token });
-      localStorage.setItem('covid-user', token);
+      console.log(token.email);
+      localStorage.setItem('covid-email', token.email);
+      localStorage.setItem('covid-psw', token.password);
+      localStorage.setItem('covid-co', token.country);
       history.push('/');
     } catch (error) {
-      setError(error.message);
+      setError('Ingrese email o password validos');
     }
   };
 

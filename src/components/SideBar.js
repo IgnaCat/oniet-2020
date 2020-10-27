@@ -123,11 +123,13 @@ export default function SideBar({ routes }) {
           <Button color="inherit" className={classes.loginButton}>
             {user ? (
               <Link
-                to="/login"
+                to="/"
                 style={{ textDecoration: 'none', color: 'inherit' }}
                 onClick={() => {
                   setUser(null);
-                  localStorage.removeItem('itsv-asistencia-token');
+                  localStorage.removeItem('covid-email');
+                  localStorage.removeItem('covid-psw');
+                  localStorage.removeItem('covid-co');
                 }}
               >
                 Logout
