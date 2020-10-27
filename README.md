@@ -26,3 +26,6 @@ Run the development server:
 Backend dependencies:
 
     $ pip install -r "requirements.txt"
+    $ cd api 
+    $ python ./crear_db.py" #creates a database with users
+    $ python ./user.py" #run api server
