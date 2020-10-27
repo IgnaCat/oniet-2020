@@ -22,12 +22,19 @@ export default function Home() {
   const fetchData = async () => {
     try {
       const country = localStorage.getItem('covid-co');
-      const response = await fetch(
-        `http://localhost:8000/data/Country/${country}`
-      );
-      const data = await response.json();
-      console.log(data);
-      setData(data);
+      if (country === null) {
+        const response = await fetch(`http://localhost:8000/data`);
+        const data = await response.json();
+        console.log(data);
+        setData(data);
+      } else {
+        const response = await fetch(
+          `http://localhost:8000/data/Country/${country}`
+        );
+        const data = await response.json();
+        console.log(data);
+        setData(data);
+      }
     } catch (error) {
       console.error(error);
     }
