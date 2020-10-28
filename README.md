@@ -21,7 +21,7 @@ Frontend dependencies:
 
 Run the development server:
 
-    $ npm run 
+    $ npm start 
 
 Backend dependencies:
 
